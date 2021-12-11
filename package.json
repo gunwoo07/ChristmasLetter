@@ -1,7 +1,7 @@
 {
   "name": "jangseungletter",
   "version": "1.0.0",
-  "description": "Web application for Christmas",
+  "description": "Web application for jangseung middle school students",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
