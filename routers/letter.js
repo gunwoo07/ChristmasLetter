@@ -1,5 +1,4 @@
 // Import express framework
-const { json } = require("body-parser");
 var express = require("express");
 var router = express.Router();
 // Import fs to read files
@@ -36,7 +35,7 @@ router.get("/", (req, res) => {
 
             // OK
             if (user.code == code) {
-                res.render("write", {letter: user.letter});
+                res.render("letter", { letter: user.letter });
                 return;
             }
         }
@@ -93,7 +92,6 @@ router.post("/write", (req, res) => {
         res.redirect("/error");
         return;
     });
-
 });
 
 

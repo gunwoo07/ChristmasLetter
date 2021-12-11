@@ -7,6 +7,8 @@ const cookieParser = require("cookie-parser");
 // Import routers
 const loginRouter = require("./routers/login");
 const letterRouter = require("./routers/letter");
+const errorRouter = require("./routers/error");
+const finishRouter = require("./routers/finish");
 // Set listening port as 3000
 const port = 3000;
 
@@ -21,6 +23,8 @@ app.use(cookieParser());
 // Use routers
 app.use("/login", loginRouter);
 app.use("/letter", letterRouter);
+app.use("/error", errorRouter);
+app.use("/finish", finishRouter);
 
 
 app.get("/", (req, res) => {
