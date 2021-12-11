@@ -9,16 +9,36 @@
   <body>
     <div class="container">
         <div class="main">
+            <img src="/image/writing" width="186px" height="186px">
             <h1>편지쓰기</h1>
-            <form action="/letter/write" method="post">
-                <textarea name="letter"><%=letter%></textarea>
+            <form action="/letter/send" method="post">
+                <input type="text" name="stdntId" placeholder="학번" autocomplete="off" />
+                <br>
+                <textarea name="letter"></textarea>
                 <br />
                 <input type="submit" />
             </form>
         </div>
     </div>
+    <div class="tag">
+        Icons made by
+        <a
+          href="https://www.flaticon.com/authors/vectors-market"
+          title="Vectors Market"
+          >Vectors Market</a
+        >
+        from
+        <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      </div>
   </body>
   <style>
+    @font-face {
+      font-family: 'SEBANG_Gothic_Bold';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     @font-face {
       font-family: "KyoboHand";
       src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff")
@@ -48,6 +68,7 @@
       letter-spacing: 5px;
       font-weight: lighter;
       font-size: 60px;
+      font-family: "SEBANG_Gothic_Bold";
     }
 
     .main {
@@ -76,6 +97,26 @@
     textarea:focus {
       border-color: dodgerblue;
       box-shadow: 0 0 2px 0 dodgerblue;
+    }
+
+    input[type="text"] {
+      font-family: "KyoboHand";
+      text-align: center;
+      width: 186px;
+      height: 40px;
+      border: 2px solid #aaaaaa;
+      border-radius: 4px;
+      margin: 8px 0;
+      outline: none;
+      padding: 8px;
+      box-sizing: border-box;
+      transition: 0.3s;
+      font-size: 25px;
+    }
+
+    input[type="text"]:focus {
+      border-color: dodgerblue;
+      box-shadow: 0 0 5px 0 dodgerblue;
     }
 
     input[type=submit] {
@@ -112,6 +153,23 @@
     body::-webkit-scrollbar-thumb {
       background-color: darkgrey;
       outline: 1px solid slategrey;
+    }
+
+    .tag {
+      position: absolute;
+      bottom: 0;
+      width: 100vw;
+      text-align: center;
+    }
+
+    a:link {
+      text-decoration: none;
+      color: grey;
+    }
+
+    a:visited {
+      text-decoration: none;
+      color: grey;
     }
   </style>
 </html>

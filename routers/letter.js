@@ -36,7 +36,7 @@ router.get("/", (req, res) => {
             // OK
             if (user.code == code) {
                 console.log(`[=]${user.name}(${user.code}) accessed`);
-                res.render("letter", { letter: user.letter });
+                res.render("letter");
                 return;
             }
         }
@@ -47,10 +47,11 @@ router.get("/", (req, res) => {
 });
 
 
-router.post("/write", (req, res) => {
-    // Read letter, code
+router.post("/send", (req, res) => {
+    // Read letter, code, stdntId
     let letter = req.body.letter;
     let code = req.cookies.code;
+    let stdntId = req.body.stdntId;
     // Set data.json path
     let dataPath = "./data/data.json";
 
@@ -79,11 +80,16 @@ router.post("/write", (req, res) => {
 
             // OK
             if (user.code == code) {
-                // Change letter
-                jsonData.users[i].letter = letter;
+                // appendLetter
+                jsonData.users[i].letters.push(
+                    {
+                        receiver: String(stdntId),
+                        content: letter
+                    }
+                );
                 newJsonFile = JSON.stringify(jsonData, null, 4);
                 fs.writeFile(dataPath, newJsonFile, 'utf8', () => {
-                    console.log(`[!]${user.name}(${user.code}) updated letter`);
+                    console.log(`[!]${user.name}(${user.code}) sent letter to ${stdntId}`);
                     res.redirect("/finish");
                 });
                 return;
