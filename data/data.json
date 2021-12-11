@@ -1,6 +1,11 @@
 {
     "users": [
         {
+            "name": "이승훈",
+            "code": "hello",
+            "letter": ""
+        },
+        {
             "name": "김건우",
             "code": "rainmaker",
             "letter": ""

@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 // Import middleware
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
 // Import routers
 const loginRouter = require("./routers/login");
 // Set listening port as 3000
@@ -13,8 +14,9 @@ const port = 3000;
 app.set("view engine", "ejs");
 // Set ejs folder as views/
 app.set("views", "./views");
-// Set middleware as bodyParser
+// Set middleware as bodyParser, cookieParser
 app.use(bodyParser());
+app.use(cookieParser());
 // Use routers
 app.use("/login", loginRouter);
 

@@ -13,6 +13,8 @@ router.get("/", (req, res) => {
 router.post("/check", (req, res) => {
     // Get code from user
     let code = req.body.code;
+    // Set cookie
+    res.cookie("code", code);
     // Set data.json path
     let dataPath = "./data/data.json";
 
@@ -31,13 +33,17 @@ router.post("/check", (req, res) => {
 
         for (var i = 0; i < users.length; i++) {
             let user = users[i];
-            
+
+            // OK
             if (user.letter == "" && user.code == code) {
+                console.log(`[-]${user.name}(${user.code}) accessed`);
                 res.redirect("/write");
-            } else {
-                res.redirect("/error");
+                return;
             }
         }
+
+        res.redirect("/error");
+        return;
     });
 });
 
