@@ -11,8 +11,8 @@ router.get("/:imageName", (req, res) => {
     let imageName = req.params.imageName;
 
     for (var i = 0; i < imageList.length; i++) {
-        if (imageName == imageList[i]) {
-            fs.readFile("./data/gift.png", function(err, data) {
+        if (imageName === imageList[i]) {
+            fs.readFile(`./data/${imageName}.png`, function(err, data) {
                 res.writeHead(200, { "Content-Type" : "text/html" });
                 res.end(data);
                 return;
