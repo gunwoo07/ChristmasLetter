@@ -7,14 +7,21 @@
     <title>로그인</title>
   </head>
   <body>
-    <div class="main">
-      <img src="/image/gift" width="186px" height="186px">
-      <h1 class="title">코드입력</h1>
-      <form action="/login/check" method="post">
-        <input type="text" name="code" placeholder="코드" autocomplete="off" />
-        <br />
-        <input type="submit" value="확인" />
-      </form>
+    <div class="container">
+      <div class="main">
+        <img src="/image/gift" width="186px" height="186px" />
+        <h1 class="title">코드입력</h1>
+        <form action="/login/check" method="post">
+          <input
+            type="text"
+            name="code"
+            placeholder="코드"
+            autocomplete="off"
+          />
+          <br />
+          <input type="submit" value="확인" />
+        </form>
+      </div>
     </div>
     <br />
     <div class="tag">
@@ -30,8 +37,9 @@
   </body>
   <style>
     @font-face {
-      font-family: 'SEBANG_Gothic_Bold';
-      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff') format('woff');
+      font-family: "SEBANG_Gothic_Bold";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff")
+        format("woff");
       font-weight: normal;
       font-style: normal;
     }
@@ -52,9 +60,13 @@
 
     body {
       font-family: "KyoboHand";
-      display: flex;
-      margin: 0 auto;
+      margin: 0;
       background-color: #feffff;
+    }
+
+    .container {
+      height: 100%;
+      display: flex;
     }
 
     .main {
@@ -114,10 +126,11 @@
     }
 
     .tag {
-      position: absolute;
-      bottom: 0;
-      width: 100vw;
+      height: 15px;
+      width: 100%;
+      float: left;
       text-align: center;
+      bottom: 0;
     }
 
     a:link {
