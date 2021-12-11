@@ -3,12 +3,11 @@
         {
             "name": "김건우",
             "code": "rainmaker",
-            "letters": [
-                {
-                    "receiver": "20802",
-                    "content": "난 너를 만나서 좋았어"
-                }
-            ]
+            "letters": []
         }
-    ]
+    ],
+    "email": {
+        "email": "jangseungletter@gmail.com",
+        "pass": "200728gunwoo"
+    }
 }
