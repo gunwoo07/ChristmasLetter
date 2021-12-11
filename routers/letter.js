@@ -35,6 +35,7 @@ router.get("/", (req, res) => {
 
             // OK
             if (user.code == code) {
+                console.log(`[=]${user.name}(${user.code}) accessed`);
                 res.render("letter", { letter: user.letter });
                 return;
             }
