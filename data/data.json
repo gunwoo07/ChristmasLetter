@@ -3,7 +3,12 @@
         {
             "name": "김건우",
             "code": "rainmaker",
-            "letters": []
+            "letters": [
+                {
+                    "receiver": "20802",
+                    "content": "rlarjsdn"
+                }
+            ]
         }
     ],
     "email": {

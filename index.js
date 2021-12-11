@@ -4,6 +4,7 @@ const app = express();
 // Import middleware
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
+const favicon = require("serve-favicon");
 // Import routers
 const loginRouter = require("./routers/login");
 const letterRouter = require("./routers/letter");
@@ -18,9 +19,10 @@ const port = 3000;
 app.set("view engine", "ejs");
 // Set ejs folder as views/
 app.set("views", "./views");
-// Set middleware as bodyParser, cookieParser
+// Set middleware as bodyParser, cookieParser, serve-favicon
 app.use(bodyParser());
 app.use(cookieParser());
+app.use(favicon("./favicon.ico"));
 // Use routers
 app.use("/login", loginRouter);
 app.use("/letter", letterRouter);
