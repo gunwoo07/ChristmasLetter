@@ -10,6 +10,7 @@ router.get("/", (req, res) => {
     res.render("login");
 });
 
+
 router.post("/check", (req, res) => {
     // Get code from user
     let code = req.body.code;
@@ -22,7 +23,7 @@ router.post("/check", (req, res) => {
     fs.readFile(dataPath, "utf8", (err, jsonFile) => {
         // Error
         if (err) {
-            return console.log(error);
+            return console.log(err);
         }
 
         // Parse json file
@@ -35,9 +36,8 @@ router.post("/check", (req, res) => {
             let user = users[i];
 
             // OK
-            if (user.letter == "" && user.code == code) {
-                console.log(`[-]${user.name}(${user.code}) accessed`);
-                res.redirect("/write");
+            if (user.code == code) {
+                res.redirect("/letter");
                 return;
             }
         }

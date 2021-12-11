@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 // Import routers
 const loginRouter = require("./routers/login");
+const letterRouter = require("./routers/letter");
 // Set listening port as 3000
 const port = 3000;
 
@@ -19,6 +20,7 @@ app.use(bodyParser());
 app.use(cookieParser());
 // Use routers
 app.use("/login", loginRouter);
+app.use("/letter", letterRouter);
 
 
 app.get("/", (req, res) => {
